@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/nav_menu_group"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_happy"
+            android:icon="@drawable/ic_happy"
+            android:title="@string/be_happy"/>
+
+        <item
+            android:id="@+id/nav_fitness"
+            android:icon="@drawable/ic_fitness_center"
+            android:title="@string/get_fit"/>
+
+        <item
+            android:id="@+id/nav_relax"
+            android:icon="@drawable/ic_beach_access"
+            android:title="@string/relax"/>
+
+        <item
+            android:id="@+id/nav_hot_tub"
+            android:icon="@drawable/ic_hot_tub"
+            android:title="@string/hot_tub"/>
+
+    </group>
+</menu>

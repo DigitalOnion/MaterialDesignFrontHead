@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MaterialDesignFrontHead</string>
+    <string name="app_label">Material Design - Luis Viruena</string>
+
+    <string name="fake_app_label">Material Design</string>
+    <string name="fake_status_label">(status bar - icon notifications)</string>
+
+    <string name="nav_title">Material Design!</string>
+    <string name="nav_sub_title">Outerspace software</string>
+
+    <string name="be_happy">Be happy</string>
+    <string name="get_fit">Get fit!</string>
+    <string name="relax">Relax...</string>
+    <string name="hot_tub">Get a shower!</string>
+
+    <string name="app_menu_like">I like this!</string>
+    <string name="app_menu_delete">Delete item</string>
+    <string name="app_menu_save">Save item</string>
+</resources>

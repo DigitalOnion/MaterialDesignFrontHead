@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/root_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:theme="@style/MyActionBar"
+        app:popupTheme="@style/MyOverflowMenuTheme"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/left_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/right_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/upper_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/status_bar_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/app_bar_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lower_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TextView
+        android:id="@+id/fake_status_bar"
+        android:onClick="onClickStatusBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="1dp"
+        android:paddingLeft="16dp"
+        android:text="@string/fake_status_label"
+        android:textColor="@android:color/white"
+        android:textSize="12dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintLeft_toRightOf="@id/left_limit"
+        app:layout_constraintRight_toLeftOf="@id/right_limit"
+        app:layout_constraintTop_toBottomOf="@id/upper_limit"
+        app:layout_constraintBottom_toTopOf="@id/status_bar_limit"
+        />
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:onClick="onClickDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_menu"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toRightOf="@id/left_limit"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_limit"
+        app:layout_constraintBottom_toTopOf="@id/app_bar_limit"
+        />
+
+    <ImageView
+        android:id="@+id/menu_overflow"
+        android:onClick="onClickAppBarMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_more_vert"
+        android:background="@color/colorPrimary"
+        app:layout_constraintRight_toLeftOf="@id/right_limit"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_limit"
+        app:layout_constraintBottom_toTopOf="@id/app_bar_limit"
+        />
+
+    <TextView
+        android:id="@+id/fake_app_bar"
+        android:onClick="onClickAppBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/fake_app_label"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toRightOf="@id/menu_icon"
+        app:layout_constraintRight_toLeftOf="@id/menu_overflow"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_limit"
+        app:layout_constraintBottom_toTopOf="@id/app_bar_limit"
+        />
+
+    <View
+        android:id="@+id/fake_desk_top"
+        android:onClick="onClickDesktop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/white_dark_border"
+        app:layout_constraintLeft_toRightOf="@id/left_limit"
+        app:layout_constraintRight_toLeftOf="@id/right_limit"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_limit"
+        app:layout_constraintBottom_toTopOf="@id/lower_limit"
+        />
+
+    <ImageView
+        android:id="@+id/fake_fab"
+        android:onClick="onClickMockFAB"
+        android:src="@drawable/ic_mock_fab"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@id/lower_limit"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_limit"
+        app:layout_constraintLeft_toRightOf="@id/left_limit"
+        app:layout_constraintRight_toLeftOf="@id/right_limit"
+        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintHorizontal_bias="0.03"
+        />
+
+    <com.outerspace.materialdesignfronthead.MyFAB
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_happy_normal"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintHorizontal_bias="0.03"/>
+
+</android.support.constraint.ConstraintLayout>
